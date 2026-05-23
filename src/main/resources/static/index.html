@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TalentScore Engine - Core API Gateway</title>
+  <style>
+    :root {
+        --bg: #0b0f19;
+        --card-bg: #111827;
+        --accent: #6366f1;
+        --success: #10b981;
+        --text: #f3f4f6;
+        --text-muted: #9ca3af;
+        --border: #1f2937;
+    }
+    body {
+        margin: 0; font-family: system-ui, -apple-system, sans-serif;
+        background-color: var(--bg); color: var(--text);
+        display: flex; justify-content: center; align-items: center; min-height: 100vh;
+    }
+    .gateway-card {
+        background-color: var(--card-bg); border: 1px solid var(--border);
+        padding: 2.5rem; border-radius: 16px; max-width: 500px; width: 90%;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .status-badge {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background-color: rgba(16, 185, 129, 0.1); color: var(--success);
+        padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;
+    }
+    .pulse {
+        width: 8px; height: 8px; background-color: var(--success);
+        border-radius: 50%; display: inline-block;
+        animation: pulse-animation 2s infinite;
+    }
+    @keyframes pulse-animation {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    h1 { font-size: 1.75rem; margin: 1rem 0 0.5rem 0; letter-spacing: -0.5px; }
+    p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; }
+    .endpoint-box {
+        background-color: #030712; border: 1px solid var(--border);
+        padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;
+    }
+    .method { color: var(--accent); font-weight: bold; margin-right: 0.5rem; }
+    .link { color: #38bdf8; text-decoration: none; }
+    .link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="gateway-card">
+  <div class="status-badge">
+    <span class="pulse"></span> REST API Engine Operational
+  </div>
+  <h1>TalentScore Core Gateway</h1>
+  <p>You have successfully connected to the Spring Boot backend instance. This server compiles metric aggregations and dispatches clean DTO payloads to the client dashboard application.</p>
+
+  <div class="endpoint-box">
+    <span class="method">GET</span>
+    <a href="/api/talent/employees" class="link">/api/talent/employees</a>
+  </div>
+</div>
+</body>
+</html>
