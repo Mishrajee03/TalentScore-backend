@@ -72,18 +72,18 @@ public class TalentScoreApplication implements WebMvcConfigurer {
      * dispatch asynchronous operational HTTP fetch calls to this API port gateway.
      */
     @Bean
+
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                // Inside your corsConfigurer() bean:
-                registry.addMapping("/api/**")
-                        .allowedOrigins("https://talent-score-frontend.vercel.app/") // Swap this later with your live frontend URL
+
+                registry.addMapping("/**")
+                        .allowedOrigins("https://talent-score-frontend.vercel.app")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
-
-
         };
     }
+
 }
