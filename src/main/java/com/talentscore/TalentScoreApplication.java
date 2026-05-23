@@ -78,7 +78,7 @@ public class TalentScoreApplication implements WebMvcConfigurer {
             public void addCorsMappings(CorsRegistry registry) {
                 // Inside your corsConfigurer() bean:
                 registry.addMapping("/api/**")
-                        .allowedOrigins("https://your-frontend-app.vercel.app") // Swap this later with your live frontend URL
+                        .allowedOrigins("https://talent-score-frontend.vercel.app/") // Swap this later with your live frontend URL
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
